@@ -1,7 +1,8 @@
 require "test_helper"
 
 class ChildTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "child should have name" do
+    child = Child.new(name: "")
+    assert_not child.valid?
+  end
 end

@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Boy1
+  born_at: 2022-12-26
+
+two:
+  name: Girl2
+  born_at: 2021-11-26

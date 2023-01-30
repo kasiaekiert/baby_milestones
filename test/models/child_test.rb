@@ -27,4 +27,10 @@ class ChildTest < ActiveSupport::TestCase
     child = Child.new(name: "John", born_at: Date.today + 2.days)
     assert_not child.valid?
   end
+  
+  test "list milestones assigned to the child" do
+    child = Child.new(name: "John", born_at: 2.weeks.ago)
+    child.reload_assignments!
+    assert_equal child.assignments.count, 1
+  end
 end

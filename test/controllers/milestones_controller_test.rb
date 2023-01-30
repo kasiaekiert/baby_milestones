@@ -17,7 +17,7 @@ class MilestonesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create milestone" do
     assert_difference("Milestone.count") do
-      post milestones_url, params: { milestone: { description: @milestone.description, title: @milestone.title } }
+      post milestones_url, params: { milestone: { description: @milestone.description, title: @milestone.title, breakpoint_day: 14 } }
     end
 
     assert_redirected_to milestone_url(Milestone.last)

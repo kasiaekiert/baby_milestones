@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_26_142630) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_30_161557) do
   create_table "assignments", force: :cascade do |t|
     t.integer "child_id", null: false
     t.integer "milestone_id", null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_26_142630) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "breakpoint_day", null: false
   end
 
   add_foreign_key "assignments", "children"

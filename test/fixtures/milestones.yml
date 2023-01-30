@@ -2,8 +2,10 @@
 
 one:
   title: First Week
-  description: 1st week - important:...
+  description: 1st week - important
+  breakpoint_day: 1
 
 two:
   title: Second Week
-  description: 2nd week - important:...
+  description: 2nd week - important
+  breakpoint_day: 7

@@ -1,3 +1,3 @@
 class Milestone < ApplicationRecord
-  has_many :assignments
+  has_many :assignments, dependent: :destroy
 end

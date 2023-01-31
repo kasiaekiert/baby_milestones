@@ -1,4 +1,5 @@
 require "test_helper"
+require 'pry'
 
 class ChildTest < ActiveSupport::TestCase
   test "child should have name" do
@@ -31,6 +32,12 @@ class ChildTest < ActiveSupport::TestCase
   test "list milestones assigned to the child" do
     child = Child.new(name: "John", born_at: 2.weeks.ago)
     child.reload_assignments!
-    assert_equal child.assignments.count, 1
+    assert_equal child.assignments.count, 2
+  end
+
+  test "test age_in_days" do
+    expected_age_in_days = 14
+    child = Child.new(name: "John", born_at: expected_age_in_days.days.ago)
+    assert_equal child.age_in_days, expected_age_in_days 
   end
 end

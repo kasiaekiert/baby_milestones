@@ -65,6 +65,6 @@ class MilestonesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def milestone_params
-      params.require(:milestone).permit(:title, :description)
+      params.require(:milestone).permit(:title, :description, :breakpoint_day)
     end
 end

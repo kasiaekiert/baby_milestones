@@ -2,8 +2,7 @@ class AddAssignmentsJob < ApplicationJob
   queue_as :default
 
   def perform(child_id)
-    puts "add assignment"
-    binding.pry
-    Child.find_by(child_id)
+    child = Child.find(child_id)
+    child.reload_assignments!
   end
 end

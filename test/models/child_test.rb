@@ -35,6 +35,13 @@ class ChildTest < ActiveSupport::TestCase
     assert_equal child.assignments.count, 2
   end
 
+  test "list milestones assigned to the younger" do
+    child = Child.new(name: "John", born_at: 5.days.ago)
+    child.reload_assignments!
+    child.reload_assignments!
+    assert_equal child.assignments.count, 1
+  end
+
   test "test age_in_days" do
     expected_age_in_days = 14
     child = Child.new(name: "John", born_at: expected_age_in_days.days.ago)

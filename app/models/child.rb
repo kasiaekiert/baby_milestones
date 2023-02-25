@@ -7,7 +7,13 @@ class Child < ApplicationRecord
   validates_date :born_at, on_or_before: lambda { Date.today }
   
   def reload_assignments!
-    Milestone.where("breakpoint_day < ?", age_in_days)
+    query = Milestone.where("breakpoint_day <= ?", age_in_days)
+    last_milestone = milestones.order(breakpoint_day: :desc).first
+    query = query.where("breakpoint_day > ?", last_milestone.breakpoint_day) if last_milestone
+    query.each do |milestone|
+      assignments.build(milestone: milestone)
+    end
+    save!
   end
 
   def age_in_days

@@ -5,7 +5,7 @@ namespace :milestones do
       Child.all.each do |child|
         # FIXME: Change to rails logger
         puts("Scheduling assignments for #{child.name} (#{child.id})")
-        AddAssignmentsJob.perform_later(child.id)
+        AddAssignmentsJob.perform_later(child)
       end
     end
   end

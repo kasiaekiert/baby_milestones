@@ -3,7 +3,7 @@ class AddAssignmentsJob < ApplicationJob
 
   def perform(child_id)
     puts "add assignment"
-    binding.pry
-    Child.find_by(child_id)
+    child = Child.find_by(child_id)
+    child.reload_assignments! if child
   end
 end

@@ -1,1 +1,0 @@
-Delayed.default_log_level = 'debug'

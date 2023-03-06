@@ -1,0 +1,8 @@
+<% if admin? %> 
+  <p>Hello Admin!</p> 
+<% else %>
+  <%= link_to "Log in page", new_session_path %>
+<% end %>
+
+
+<%= link_to "Log out", session_path, method: :delete %>

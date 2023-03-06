@@ -1,5 +1,6 @@
 class MilestonesController < ApplicationController
   before_action :set_milestone, only: %i[ show edit update destroy ]
+  before_action :authenticate_admin!, except: %i[ show ]
 
   # GET /milestones or /milestones.json
   def index

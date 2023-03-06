@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :session
+  resource :session, only: %i[ new destroy ]
   resources :milestones
   resources :children
 

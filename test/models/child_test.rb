@@ -7,7 +7,10 @@ class ChildTest < ActiveSupport::TestCase
     assert_not child.valid?
   end
 
-  #add test to child model  
+  test "child should have born date" do
+    child = Child.new(name: "John", born_at: "")
+    assert_not child.valid?
+  end
 
   test "child should have name and born date" do
     child = Child.new(name: "Emma", born_at: "")
